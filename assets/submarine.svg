@@ -1,0 +1,30 @@
+<svg width="600" height="421" viewBox="0 0 600 421" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="520.696" cy="235.877" rx="12.5" ry="28" transform="rotate(5.65219 520.696 235.877)" fill="#FD604A"/>
+<ellipse cx="515.18" cy="291.605" rx="12.5" ry="28" transform="rotate(5.65219 515.18 291.605)" fill="#FD604A"/>
+<rect x="487.28" y="253.673" width="70" height="15" transform="rotate(5.65219 487.28 253.673)" fill="#3D3D3D"/>
+<path d="M186.507 84.2259C187.595 73.2339 197.387 65.205 208.379 66.2929L337.747 79.0965C348.739 80.1844 356.768 89.9771 355.68 100.969L351.544 142.765L182.37 126.022L186.507 84.2259Z" fill="#3D3D3D"/>
+<ellipse cx="418.689" cy="136.813" rx="21.5" ry="28" transform="rotate(61.7416 418.689 136.813)" fill="#FD604A"/>
+<ellipse cx="384.665" cy="368.904" rx="21.5" ry="28" transform="rotate(-50.4378 384.665 368.904)" fill="#FD604A"/>
+<g filter="url(#filter0_d_212_181)">
+<ellipse cx="256.665" cy="238.385" rx="243" ry="139.5" transform="rotate(5.65219 256.665 238.385)" fill="#F29B34"/>
+</g>
+<circle cx="89.5311" cy="221.341" r="30" transform="rotate(5.65219 89.5311 221.341)" fill="#FCFCFC" stroke="#3D3D3D" stroke-width="10"/>
+<circle cx="198.996" cy="232.175" r="30" transform="rotate(5.65219 198.996 232.175)" fill="#FCFCFC" stroke="#3D3D3D" stroke-width="10"/>
+<circle cx="308.461" cy="243.009" r="30" transform="rotate(5.65219 308.461 243.009)" fill="#FCFCFC" stroke="#3D3D3D" stroke-width="10"/>
+<circle cx="558.241" cy="267.73" r="20" transform="rotate(5.65219 558.241 267.73)" fill="#FD604A"/>
+<rect x="268.057" y="42.0526" width="15" height="30" transform="rotate(5.65219 268.057 42.0526)" fill="#D9D9D9"/>
+<rect x="251.14" y="40.3783" width="15" height="50" transform="rotate(-84.3478 251.14 40.3783)" fill="#3D3D3D"/>
+<rect x="239.799" y="43.2755" width="23" height="11" transform="rotate(-84.3478 239.799 43.2755)" fill="#57AEFF"/>
+<defs>
+<filter id="filter0_d_212_181" x="10.4492" y="97.4926" width="492.431" height="289.785" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_212_181"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_212_181" result="shape"/>
+</filter>
+</defs>
+</svg>
