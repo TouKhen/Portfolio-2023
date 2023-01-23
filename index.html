@@ -12,17 +12,18 @@
     ></script>
     <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
-    <!-- js -->
+    <!-- gsap library -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
       defer
     ></script>
+    <!-- my js -->
     <script src="js/script.js" defer></script>
   </head>
   <body>
     <div id="page-wrapper">
       <div id="custom-cursor">
-        <img src="./assets/submarine.svg" alt="custom cursor submarine" />
+        <img src="./assets/cursor.svg" alt="custom cursor submarine" />
       </div>
       <nav class="page-nav">
         <!-- <i class="fa-solid fa-xmark"></i> -->
@@ -44,6 +45,38 @@
           <li><a href="#">Contact me</a></li>
         </ul>
       </nav>
+
+      <section class="hero">
+        <a href="#">
+          <span class="hero-text">
+            <span>R</span>
+            <span>e</span>
+            <span>a</span>
+            <span>d</span>
+            <span> </span>
+            <span>m</span>
+            <span>o</span>
+            <span>r</span>
+            <span>e</span>
+            <span>!</span>
+          </span>
+          <button>
+            <img src="./assets/toucan.svg" alt="toucan toco svg" />
+          </button>
+        </a>
+
+        <div class="waves-container">
+          <img src="./assets/wave_1.svg" alt="" />
+          <img src="./assets/wave_2.svg" alt="" />
+          <img
+            id="submarine"
+            data-state="opened"
+            src="./assets/submarine.svg"
+            alt=""
+          />
+          <img src="./assets/wave_3.svg" alt="" />
+        </div>
+      </section>
     </div>
   </body>
 </html>
