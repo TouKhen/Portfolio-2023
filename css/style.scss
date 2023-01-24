@@ -1,14 +1,14 @@
 // COLORS
 $white: #fcfcfc;
-$black: #1e1e1e;
+$black: #080808;
 $yellow: #fde04a;
 $orange: #f29b34;
 $lightblue: #78d7e4;
 
 // FONTS
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,800;1,400&display=swap");
 
-$poppins: "Poppins", sans-serif;
+$jetbrains: "JetBrains Mono", monospace;
 
 // CSS
 
@@ -17,7 +17,6 @@ $poppins: "Poppins", sans-serif;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
-    cursor: none;
 }
 
 html {
@@ -34,269 +33,18 @@ body {
     min-height: 100vh;
 }
 
-// custom cursor
-
-#custom-cursor {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 99999999999;
-    user-select: none;
-    pointer-events: none;
-
-    img {
-        width: 2rem;
-    }
-}
-
 // page nav
 
 .page-nav {
     width: 100%;
-    height: 100%;
-    .menu-toggle {
-        position: absolute;
-        top: 4rem;
-        right: 4rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $white;
-        color: $black;
-        font-size: 4rem;
-        border-radius: 50%;
-        width: 7rem;
-        height: 7rem;
-        // cursor: pointer;
-        border: none;
-        transition: clip-path ease-in-out 700ms;
-        z-index: 999999;
-        i {
-            width: 4rem;
-            height: 4rem;
-        }
-    }
-
-    .primary-navigation {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 99999;
-        width: 100%;
-        height: 100%;
-
-        &[data-state="opened"] {
-            animation: clipPathCircleOpen 750ms ease-in-out forwards;
-            display: block;
-        }
-
-        &[data-state="closing"] {
-            animation: clipPathCircleClose 750ms ease-in-out forwards;
-        }
-        &[data-state="closed"] {
-            display: none;
-        }
-
-        li {
-            height: 33.3333%;
-            background-color: #252525;
-            display: flex;
-            align-items: center;
-            width: 100%;
-
-            &:hover {
-                &:nth-child(1) {
-                    background-color: $orange;
-                    a {
-                        color: $black;
-                    }
-                }
-                &:nth-child(2) {
-                    background-color: $yellow;
-                    a {
-                        color: $black;
-                    }
-                }
-                &:nth-child(3) {
-                    background-color: $lightblue;
-                    a {
-                        color: $black;
-                    }
-                }
-            }
-
-            & a {
-                height: 100%;
-                width: 100%;
-                font-family: $poppins;
-                text-decoration: none;
-                font-size: 6rem;
-                padding-left: 4rem;
-                display: flex;
-                align-items: center;
-            }
-
-            &:nth-child(1) a {
-                color: $orange;
-            }
-            &:nth-child(2) a {
-                color: $yellow;
-            }
-            &:nth-child(3) a {
-                color: $lightblue;
-            }
-        }
-    }
-}
-
-@keyframes clipPathCircleOpen {
-    0% {
-        clip-path: circle(0% at top right);
-    }
-    100% {
-        clip-path: circle(250% at top right);
-    }
-}
-@keyframes clipPathCircleClose {
-    0% {
-        clip-path: circle(250% at top right);
-    }
-    100% {
-        clip-path: circle(0% at top right);
+    h1 {
+        font-family: $jetbrains;
+        font-weight: 700;
+        color: $orange;
+        font-size: 2.8rem;
+        text-align: center;
+        padding-block: 1.2rem;
     }
 }
 
 // Hero section
-
-.hero {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    overflow: hidden;
-    height: 100vh;
-    justify-content: space-between;
-
-    a {
-        position: relative;
-        display: flex;
-        margin: 10rem auto 0;
-
-        button {
-            background-color: $yellow;
-            border-radius: 50%;
-            width: 40rem;
-            height: 40rem;
-            border: none;
-            overflow: hidden;
-
-            img {
-                margin-top: 7rem;
-            }
-        }
-
-        .hero-text {
-            display: inline-block;
-            position: absolute;
-            top: -15rem;
-            left: 11rem;
-            color: #fcfcfc;
-            font-family: "Poppins", sans-serif;
-            font-size: 3rem;
-            text-align: center;
-            width: 100%;
-            height: 100%;
-            transform: rotate(-39deg);
-
-            & span {
-                display: inline-block;
-                transform-origin: bottom center;
-                height: 260px;
-                position: absolute;
-                width: 20px;
-                left: 0;
-                top: 0;
-            }
-
-            @for $i from 1 through 100 {
-                & span:nth-child(#{$i}) {
-                    transform: rotate(($i * 7) + deg);
-                }
-            }
-
-            & span:nth-child(7) {
-                transform: rotate(51.2deg);
-            }
-            & span:nth-child(8) {
-                transform: rotate(57.2deg);
-            }
-        }
-    }
-
-    .waves-container {
-        position: relative;
-        width: 100%;
-        min-height: 40rem;
-        overflow: hidden;
-
-        img {
-            position: absolute;
-            bottom: -35px;
-            left: 0;
-            width: 100%;
-            min-height: 20rem;
-
-            &:nth-child(1) {
-                z-index: 1;
-            }
-            &:nth-child(2) {
-                z-index: 2;
-            }
-            &:nth-child(3) {
-                z-index: 3;
-                width: 40%;
-                right: -10rem;
-                left: unset;
-                bottom: -2rem;
-                transform: rotate(10deg);
-
-                &[data-state="opened"] {
-                    animation: submarineOpen 750ms ease-in-out forwards;
-                }
-
-                &[data-state="opening"] {
-                    animation: submarineOpen 750ms ease-in-out forwards;
-                    display: block;
-                }
-                &[data-state="closed"] {
-                    animation: submarineClose 750ms ease-in-out forwards;
-                    animation-delay: 1500ms;
-                }
-            }
-            &:nth-child(4) {
-                z-index: 4;
-            }
-        }
-    }
-}
-
-@keyframes submarineOpen {
-    0% {
-        transform: translateY(200%);
-    }
-    70% {
-        transform: translateY(-7%) rotate(10deg);
-    }
-    100% {
-        transform: translateY(0%) rotate(10deg);
-    }
-}
-
-@keyframes submarineClose {
-    0% {
-        transform: translateY(0%);
-        transform: rotate(10deg);
-    }
-    100% {
-        transform: translateY(200%);
-    }
-}
