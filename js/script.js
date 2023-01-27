@@ -1,46 +1,25 @@
-// cursor
-let cursor = document.querySelector("#custom-cursor");
-
-const positionElement = (e) => {
-  const mouseY = e.clientY;
-  const mouseX = e.clientX;
-
-  //   cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-  cursor.style.top = `${mouseY - 10}px`;
-  cursor.style.left = `${mouseX - 10}px`;
-};
-
-window.addEventListener("mousemove", positionElement);
-
-// Menu
-
-const menuToggle = document.querySelector(".menu-toggle");
-const siteNavigation = document.querySelector(".primary-navigation");
-const submarine = document.querySelector("#submarine");
-
-menuToggle.addEventListener("click", () => {
-  const isOpened = menuToggle.getAttribute("aria-expanded") === "true";
-  isOpened ? closeMenu() : openMenu();
+// On scrolltrigger show every skills from the "about me" section
+gsap.from(".about-me .skill-list li", 1, {
+  scrollTrigger: {
+    trigger: ".about-me .skill-list li",
+    start: "top bottom",
+  },
+  scale: 0,
+  stagger: {
+    each: 0.3,
+    from: "top",
+  },
+  duration: 2.5,
+  ease: "elastic.out(1, 0.5)",
 });
 
-function openMenu() {
-  menuToggle.setAttribute("aria-expanded", "true");
-  menuToggle.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
-  siteNavigation.setAttribute("data-state", "opened");
-  submarine.setAttribute("data-state", "close");
-}
-function closeMenu() {
-  menuToggle.setAttribute("aria-expanded", "false");
-  menuToggle.innerHTML = `<i class="fa-solid fa-bars"></i>`;
-  siteNavigation.setAttribute("data-state", "closing");
-  submarine.setAttribute("data-state", "opening");
-
-  siteNavigation.addEventListener(
-    "animationend",
-    () => {
-      siteNavigation.setAttribute("data-state", "closed");
-      submarine.setAttribute("data-state", "open");
+// Show my projects on scroll trigger
+document.querySelectorAll(".projects article").forEach((article) => {
+  gsap.from(article, 1, {
+    scrollTrigger: {
+      trigger: article,
+      start: "top bottom",
     },
-    { once: true }
-  );
-}
+    x: "-100%",
+  });
+});

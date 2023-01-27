@@ -1,6 +1,8 @@
 // COLORS
 $white: #fcfcfc;
 $black: #080808;
+$dark-gray: #181818;
+$gray: #797979;
 $yellow: #fde04a;
 $orange: #f29b34;
 $lightblue: #78d7e4;
@@ -21,30 +23,469 @@ $jetbrains: "JetBrains Mono", monospace;
 
 html {
     font-size: 62.5%;
-}
-
-body {
-    overflow: hidden;
+    scroll-behavior: smooth;
 }
 
 #page-wrapper {
     background-color: $black;
     width: 100%;
-    min-height: 100vh;
+}
+
+.container {
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+a {
+    transition: all 0.2s ease;
+
+    &:hover {
+        color: $yellow !important;
+    }
+}
+
+h2 {
+    color: $white;
+    font-size: 2.8rem;
+    font-family: $jetbrains;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+h3 {
+    color: $white;
+    font-family: $jetbrains;
+    font-size: 2.4rem;
+    font-weight: 400;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    li {
+        padding: 0.4rem 2.4rem;
+        border: 2px solid $white;
+        border-radius: 3rem;
+        font-size: 1.6rem;
+        font-family: $jetbrains;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $white;
+
+        &.skill-html {
+            color: #e34c26;
+        }
+        &.skill-css {
+            span:first-child {
+                color: #264de4;
+            }
+            span:last-child {
+                color: #cd6799;
+            }
+        }
+        &.skill-js {
+            color: #f7df1e;
+        }
+        &.skill-ajax {
+            color: #f7df1e;
+        }
+        &.skill-php {
+            color: #8993be;
+        }
+        &.skill-api {
+            color: #57aeff;
+        }
+        &.skill-bootstrap {
+            color: #6610f2;
+        }
+        &.skill-git {
+            color: #f1502f;
+        }
+        &.skill-sql {
+            color: #d0d0d0;
+        }
+        &.skill-figma {
+            color: #00d47b;
+        }
+        &.skill-three {
+            color: #909090;
+        }
+        &.skill-gsap {
+            color: #4e9815;
+        }
+        &.skill-tailwind {
+            color: #38bdf8;
+        }
+        &.skill-vite {
+            color: #ffd129;
+        }
+        &.skill-postgresql {
+            color: #008bb9;
+        }
+        &.skill-yarn {
+            color: #2a87b1;
+        }
+    }
 }
 
 // page nav
 
 .page-nav {
+    position: relative;
     width: 100%;
+    padding: 1.1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     h1 {
         font-family: $jetbrains;
         font-weight: 700;
         color: $orange;
         font-size: 2.8rem;
-        text-align: center;
         padding-block: 1.2rem;
+    }
+    > div {
+        p:nth-child(1) {
+            color: $white;
+            font-family: $jetbrains;
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 700;
+
+            i {
+                color: $orange;
+            }
+        }
+
+        &:hover p:nth-child(2) {
+            display: inline-block;
+        }
+
+        p:nth-child(2) {
+            position: absolute;
+            z-index: 99;
+            color: $white;
+            background-color: rgba(8, 8, 8, 0.801);
+            border: 3px solid $orange;
+            padding: 1rem;
+            font-family: $jetbrains;
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            right: 1rem;
+            top: 8rem;
+            display: none;
+        }
     }
 }
 
 // Hero section
+
+.main-section {
+    display: flex;
+    margin-bottom: 10rem;
+
+    > div,
+    > aside {
+        width: 50%;
+    }
+
+    > aside {
+        display: flex;
+        justify-content: center;
+        img {
+            position: sticky;
+            top: 10%;
+            width: 100%;
+            height: fit-content;
+        }
+    }
+
+    h1 {
+        color: $white;
+        font-size: 6.4rem;
+        font-family: $jetbrains;
+        font-weight: 400;
+        margin-top: 20rem;
+    }
+
+    .italic-sub-text {
+        color: $gray;
+        font-size: 2.8rem;
+        font-family: $jetbrains;
+        font-style: italic;
+        max-width: 30ch;
+    }
+
+    .button-container {
+        display: flex;
+        margin-top: 10rem;
+
+        a {
+            border-radius: 8rem;
+            padding: 1.8rem 2.8rem;
+            border: 0.3rem solid;
+            font-family: $jetbrains;
+            font-size: 2rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        a:first-child {
+            color: $white;
+            border-color: $white;
+            margin-right: 2rem;
+            transition: all 0.2s ease;
+
+            &:hover,
+            &:focus {
+                color: $black;
+                background-color: $white;
+            }
+        }
+
+        a:last-child {
+            color: $black;
+            background-color: $orange;
+            border-color: $orange;
+            font-weight: 700;
+            transition: all 0.2s ease;
+
+            &:hover,
+            &:focus {
+                background-color: $yellow;
+                border-color: $yellow;
+                color: $black !important;
+            }
+        }
+    }
+
+    // About me
+    .about-me {
+        margin-top: 28rem;
+        margin-bottom: 10rem;
+        p {
+            color: $white;
+            font-size: 2.4rem;
+            font-family: $jetbrains;
+            font-weight: 400;
+            margin-left: 1rem;
+            margin-bottom: 2rem;
+        }
+        .skill-list {
+            margin-left: 1rem;
+        }
+    }
+
+    .projects {
+        margin-bottom: 10rem;
+        > article {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-left: 1rem;
+            margin-bottom: 2rem;
+
+            h3 {
+                .date {
+                    color: $gray;
+                }
+
+                .link {
+                    color: $orange;
+                    text-decoration: none;
+                }
+            }
+
+            p {
+                color: $white;
+                font-family: $jetbrains;
+                font-size: 1.8rem;
+                font-weight: 400;
+            }
+        }
+    }
+
+    // formations
+    .formations {
+        > div {
+            display: flex;
+            flex-direction: column;
+            padding-right: 1rem;
+            border-right: 3px dashed $white;
+            stroke-dasharray: 4;
+            padding-bottom: 4rem;
+
+            p {
+                color: $white;
+                font-size: 2.8rem;
+                font-family: $jetbrains;
+                font-weight: 700;
+                text-align: right;
+                margin-bottom: 1rem;
+
+                &:not(:first-child) {
+                    margin-top: 5rem;
+                }
+            }
+        }
+    }
+}
+
+// footer
+
+.page-footer {
+    background-color: $dark-gray;
+    width: 100%;
+    padding-block: 8rem 18rem;
+    > div {
+        display: flex;
+
+        > div {
+            width: 50%;
+
+            h2 {
+                margin-bottom: 3rem;
+            }
+
+            &:first-child {
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    > div {
+                        display: flex;
+                        gap: 1rem;
+
+                        input {
+                            width: 50%;
+                        }
+                    }
+
+                    input,
+                    textarea {
+                        border-radius: 2rem;
+                        padding: 1.7rem 2rem;
+                        font-size: 2rem;
+                        font-family: $jetbrains;
+                        color: $orange;
+                        background-color: $dark-gray;
+                        border: 3px solid $white;
+
+                        &::placeholder {
+                            color: $gray;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    > input {
+                        width: 100%;
+                        margin-top: 1rem;
+                    }
+
+                    > textarea {
+                        width: 100%;
+                        height: 20rem;
+                        margin-top: 1rem;
+                        border-radius: 2rem;
+                        resize: none;
+                    }
+
+                    button {
+                        border-radius: 8rem;
+                        padding: 1.8rem 2.8rem;
+                        border: 0.3rem solid;
+                        font-family: $jetbrains;
+                        font-size: 2rem;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        color: $black;
+                        background-color: $orange;
+                        border-color: $orange;
+                        width: fit-content;
+                        margin-top: 1rem;
+                        align-self: flex-end;
+                        cursor: pointer;
+                        transition: all 0.2s ease;
+
+                        &:hover,
+                        &:focus {
+                            background-color: $yellow;
+                            border-color: $yellow;
+                            color: $black !important;
+                        }
+                    }
+                }
+            }
+
+            .socials-list {
+                display: flex;
+                margin-left: 1rem;
+                gap: 2rem;
+
+                li a {
+                    font-size: 5rem;
+                    color: $white;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        color: $orange;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .main-section {
+        > div {
+            width: 100%;
+        }
+        aside {
+            display: none;
+        }
+
+        .hero {
+            h1,
+            p {
+                text-align: center;
+                max-width: fit-content;
+                margin-inline: auto;
+            }
+
+            .button-container {
+                justify-content: center;
+            }
+        }
+    }
+
+    .page-footer {
+        > div {
+            flex-direction: column;
+
+            > div {
+                width: 100%;
+
+                form > div {
+                    flex-direction: column;
+                    gap: unset !important;
+
+                    input {
+                        width: 100% !important;
+                        &:first-child {
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+
+                form button {
+                    width: 100% !important;
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+    }
+}
