@@ -24,11 +24,18 @@ $jetbrains: "JetBrains Mono", monospace;
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    cursor: none;
+}
+
+body {
+    position: relative;
+    background-color: $black;
 }
 
 #page-wrapper {
-    background-color: $black;
+    background-color: rgba(8, 8, 8, 0.893);
     width: 100%;
+    backdrop-filter: blur(50px);
 }
 
 .container {
@@ -130,6 +137,22 @@ h3 {
     }
 }
 
+// .blob-1 {
+//     position: absolute;
+//     z-index: -1;
+//     width: 50%;
+// }
+
+// trail cursor
+
+.trail {
+    position: absolute;
+    height: 6px;
+    width: 6px;
+    border-radius: 3px;
+    background: $white;
+}
+
 // page nav
 
 .page-nav {
@@ -200,6 +223,11 @@ h3 {
             top: 10%;
             width: 100%;
             height: fit-content;
+            pointer-events: none;
+
+            &::selection {
+                background-color: transparent;
+            }
         }
     }
 
@@ -242,7 +270,7 @@ h3 {
 
             &:hover,
             &:focus {
-                color: $black;
+                color: $black !important;
                 background-color: $white;
             }
         }

@@ -9,11 +9,19 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  cursor: none;
+}
+
+body {
+  position: relative;
+  background-color: #080808;
 }
 
 #page-wrapper {
-  background-color: #080808;
+  background-color: rgba(8, 8, 8, 0.893);
   width: 100%;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
 }
 
 .container {
@@ -111,6 +119,13 @@ h3 {
   color: #2a87b1;
 }
 
+.trail {
+  position: absolute;
+  height: 6px;
+  width: 6px;
+  border-radius: 3px;
+  background: #fcfcfc;
+}
 .page-nav {
   position: relative;
   width: 100%;
@@ -175,6 +190,13 @@ h3 {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  pointer-events: none;
+}
+.main-section > aside img::-moz-selection {
+  background-color: transparent;
+}
+.main-section > aside img::selection {
+  background-color: transparent;
 }
 .main-section h1 {
   color: #fcfcfc;
@@ -211,7 +233,7 @@ h3 {
   transition: all 0.2s ease;
 }
 .main-section .button-container a:first-child:hover, .main-section .button-container a:first-child:focus {
-  color: #080808;
+  color: #080808 !important;
   background-color: #fcfcfc;
 }
 .main-section .button-container a:last-child {
